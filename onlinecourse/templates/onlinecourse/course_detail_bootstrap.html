@@ -53,7 +53,7 @@
             <!-- Task: show questions and choices -->
             <div class="card-columns-vertical">
                 {% if user.is_authenticated %}
-                    <input class="btn btn-primary btn-block" data-toggle="collapse" data-target="#exam">
+                    <button class="btn btn-primary btn-block" data-toggle="collapse" data-target="#exam">Start Exam</button>
                     <div id="exam" class="collapse">
                         <form id="questionform" action="{% url 'onlinecourse:submit' course.id %}" method="post">
                             {% for question in course.question_set.all %}

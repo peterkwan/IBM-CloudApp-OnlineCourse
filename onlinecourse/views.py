@@ -116,6 +116,7 @@ def submit(request, course_id):
 
 
 def show_exam_result(request, course_id, submission_id):
+    context = {}
     course = get_object_or_404(Course, pk=course_id)
     submission = get_object_or_404(Submission, pk=submission_id)
     selected_ids = submission.choices.all()
