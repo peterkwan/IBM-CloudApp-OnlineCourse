@@ -101,7 +101,7 @@ class Question(models.Model):
 
     def is_get_score(self, selected_ids):
         all_answers = [choice.id for choice in self.choice_set.filter(is_correct=True)]
-        selected_correct = [choice.id for choice in self.choice_set.filter(is_correct=True, id__in=selected_ids)]
+        selected_correct = [choice.id for choice in self.choice_set.filter(id__in=selected_ids)]
         return all_answers == selected_correct
 
 class Choice(models.Model):
